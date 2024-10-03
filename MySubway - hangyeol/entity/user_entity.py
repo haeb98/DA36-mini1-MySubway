@@ -12,6 +12,8 @@ class UserEntity:
 
     def get_user_id(self):
         return int(self.__user_id)
+    def get_login_id(self):
+        return self.__user_login_id
     def get_user_name(self):
         return self.__user_name
     def get_user_gender(self):
