@@ -4,10 +4,10 @@ from admin_menu import AdminMenu
 
 
 class LoginMenu:
-    my_login_id = ['sample', 'sample2', 'sample3']
-    # my_password = 'password'
+    user_login_id = ['sample', 'sample2', 'sample3']
+    # user_password = 'password'
     admin_id = 'admin'
-    # admin_password = 'password'
+    admin_password = 'ds36'
     def __init__(self):
         self.login_service = LoginService()
         self.user_menu = UserMenu()
@@ -16,13 +16,16 @@ class LoginMenu:
     def login(self):
         while True:
             login_id = input('Enter your id: ')
-            # password = input('Enter your password:')
 
-            if login_id in self.my_login_id:
+            if login_id in self.user_login_id:
                 self.user_menu.user_menu()
 
             elif login_id == self.admin_id:
-                self.admin_menu.admin_menu()
+                password = input('Enter admin password: ')
+                if password == self.admin_password:
+                    self.admin_menu.admin_menu()
+                else:
+                    return
 
             else:
                 print(f'No such user with id "{login_id}"')
