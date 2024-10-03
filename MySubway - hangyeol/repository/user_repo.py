@@ -60,37 +60,3 @@ class UserRepo:
         return False
 
 
-    # def find_all(self):
-    #     return self.user_info
-    #
-    # def find_by_user_id(self, user_id):
-    #     for info in self.user_info:
-    #         if info.get_user_id() == user_id:
-    #             return info
-
-    # def update_user_info(self, user_id, attr, new_value):
-    #     info = self.find_by_user_id(user_id)
-    #     if info:
-    #         match attr:
-    #             case 'user_id':
-    #                 info.set_user_id(new_value)
-    #             case 'login_id':
-    #                 info.set_user_login_id(new_value)
-    #             case 'user_name':
-    #                 info.set_user_name(new_value)
-    #             case 'user_gender':
-    #                 info.set_user_gender(new_value)
-    #             case 'user_birth':
-    #                 info.set_user_birth(new_value)
-    #             case 'my_menu':
-    #                 info.set_my_menu(new_value)
-    #             case _:
-    #                 raise AttributeError(f'{attr}속성은 존재하지 않습니다.')
-    #         return 1
-    #     else:
-    #         return 0
-
-
-
-
-
