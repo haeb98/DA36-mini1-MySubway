@@ -1,3 +1,4 @@
+import pickle
 import time
 
 # from MySubway.service.order_service import OrderService
@@ -8,10 +9,15 @@ class OrderRepo:
     def __init__(self):
         self.orders = []  # OrderEntity 객체들을 저장할 리스트
 
+    def save_orders(self):
+        with open('order.pkl', 'wb') as f:
+            pickle.dump(self.orders, f)
+
     def add_order(self, order):
         """새로운 주문을 저장"""
         self.orders.append(order)
         print(self.orders)
+        self.save_orders()
 
     def select_payment_method(self):
         """결제 방법 선택"""

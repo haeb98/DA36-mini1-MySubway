@@ -35,8 +35,8 @@ class OrderService:
         print('-----------------------')
 
         order = OrderEntity(order_no, total_price, user, cart)
-        self.add_order(order)
         self.select_payment_method()
+        self.add_order(order) # repo.orders에 order를 추가하고, pkl 쓰기 작업
         return 1
 
     def add_order(self, order):

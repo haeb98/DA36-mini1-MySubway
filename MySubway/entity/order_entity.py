@@ -23,8 +23,8 @@ class OrderNo:
             self.current_date = today
             self.counter = 1
 
-        #주문번호 생성 (ex. 20241003_001)
-        order_no = f"{self.current_date}_{self.counter:03d}"
+        #주문번호 생성 (ex. 20241003001)
+        order_no = int(f"{self.current_date}{self.counter:03d}")
         return order_no
 
     def increment_counter(self):
