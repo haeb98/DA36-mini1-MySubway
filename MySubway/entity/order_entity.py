@@ -2,10 +2,11 @@
 import datetime
 
 class OrderEntity:
-    def __init__(self, order_no, total_price, user_id):
+    def __init__(self, order_no, total_price, user_id, cart):
         self.order_no = order_no  # 주문번호
         self.total_price = total_price  # 총 금액
         self.user_id = user_id  # 사용자 ID
+        self.cart = cart
 
 class OrderNo:
     """주문번호"""
@@ -22,7 +23,7 @@ class OrderNo:
             self.current_date = today
             self.counter = 1
 
-        #주문번호 생성 (ex. 20241003-001)
+        #주문번호 생성 (ex. 20241003_001)
         order_no = f"{self.current_date}_{self.counter:03d}"
         return order_no
 

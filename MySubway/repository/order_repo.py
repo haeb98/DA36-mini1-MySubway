@@ -1,5 +1,6 @@
 import time
 
+# from MySubway.service.order_service import OrderService
 from MySubway.entity.order_entity import OrderEntity, OrderNo
 
 class OrderRepo:
@@ -10,6 +11,7 @@ class OrderRepo:
     def add_order(self, order):
         """새로운 주문을 저장"""
         self.orders.append(order)
+        print(self.orders)
 
     def select_payment_method(self):
         """결제 방법 선택"""
@@ -31,15 +33,18 @@ class OrderRepo:
                 print('결제가 완료되었습니다')
             elif payment_choice == "2":
                 print("핸드폰을 가까이 대주세요.")
+                print('...')
                 time.sleep(2)
                 print('결제가 완료되었습니다')
             elif payment_choice == "3":
                 print("바코드를 인식시켜 주세요.")
+                print('...')
                 time.sleep(2)
                 print('결제가 완료되었습니다')
             else:
                 print("잘못된 선택입니다.")
                 pass
+            break
 
 
     def get_all_orders(self):

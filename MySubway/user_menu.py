@@ -10,6 +10,7 @@ class UserMenu:
     def __init__(self):
         self.menu_service = MenuService()
         self.menu_repo = MenuRepo()
+        self.order_service = OrderService()
 
     def user_menu(self):
         print('🏠안녕하세요. MySubway를 방문해주셔서 감사합니다.🏠')
@@ -25,27 +26,15 @@ class UserMenu:
             case 1:
                 self.menu_service.my_menu()
             case 2:
-                while True:
-                    selected_menu = self.start_menu()
-                    self.print_selected_menu(selected_menu)
-                    cart = self.menu_service.add_to_cart(selected_menu)
+                cart = self.pick_menu_process()
 
-                    order_more_yn = input("> 추가 주문할 것이 있나요?(y/n) ")
-                    if order_more_yn != 'y':
-                        print(">>> 결제창으로 넘어갑니다.카트를 확인해주세요")
-                        self.print_cart(cart)
-                        while True:
-                            order_now_yn = input("> 이대로 주문할까요?(y/n) ")
-                            if order_now_yn == 'y':
-                                order_service = OrderService()
-                                result = order_service.order_now(user=self.get_current_user(), cart=cart)
-                                self.print_result(result)
-                                break
-                            else:
-                                break
+                # 주문완료후 결제
+                print(">>> 결제창으로 넘어갑니다.카트를 확인해주세요")
+                self.print_cart(cart)
+                # 결제 시작
+                result = self.order_service.order_now(user=self.get_current_user(), cart=cart)
+                self.print_result(result)
 
-                            # order_menu = OrderMenu(user, cart)
-                            # order_menu.display_menu()
             case 0:
                 return
             case _:
@@ -115,7 +104,21 @@ class UserMenu:
 
     def print_result(self, result):
         if result > 0:
-            print('주문해주셔서 감사합니다. 샌드위치가 만들어질 동안 잠시만 기다려주새요~')
+            print('주문해주셔서 감사합니다. 샌드위치가 만들어질 동안 잠시만 기다려주세요~')
         else:
-            print('결제 실패')
+            print('결제 실패하였습니다. 다시 결제해주세요')
+
+    def pick_menu_process(self):
+        while True:
+            selected_menu = self.start_menu()
+            self.print_selected_menu(selected_menu)
+            cart = self.menu_service.add_to_cart(selected_menu)
+
+            order_more_yn = input("> 추가 주문할 것이 있나요?(y/n) ")
+            if order_more_yn != 'y':
+                # 주문 완료한 경우
+                return cart
+            else:
+                # 추가주문 하려는 경우
+                pass
 
