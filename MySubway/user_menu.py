@@ -3,7 +3,6 @@ from MySubway.repository.menu_repo import MenuRepo
 from MySubway.service.menu_service import MenuService
 from MySubway.service.order_service import OrderService
 
-# from MySubway.order_menu import OrderMenu
 
 # user_Login_id로 로그인 시 UserMenu 실행
 class UserMenu:
@@ -12,7 +11,7 @@ class UserMenu:
         self.menu_repo = MenuRepo()
         self.order_service = OrderService()
 
-    def user_menu(self):
+    def user_menu(self, login_id):
         print('🏠안녕하세요. MySubway를 방문해주셔서 감사합니다.🏠')
         user_menu_str = '''
 =====MySubway Menu=====
@@ -24,7 +23,20 @@ class UserMenu:
         choice = int(input(user_menu_str))
         match choice:
             case 1:
-                self.menu_service.my_menu()
+                my_menu = self.menu_service.my_menu(login_id)
+                print(f'My Menu: {my_menu}')
+                order_yn = input("My Menu를 주문하시겠습니까?(y/n) ")
+                if order_yn == 'y':
+                    selected_menu = self.my_menu_process(my_menu)
+                    self.print_selected_menu(selected_menu)
+                    ' 를 카트에 담았습니다🛒.'
+
+                    cart = self.menu_service.add_to_cart(selected_menu)
+                    self.print_cart(cart)
+
+                    result = self.order_service.order_now(user=self.get_current_user(), cart=cart)
+                    self.print_result(result)
+
             case 2:
                 cart = self.pick_menu_process()
 
@@ -85,8 +97,7 @@ class UserMenu:
               f' 🥖빵: {selected_menu.get_bread()._MenuOption__item}\n'
               f' 🧀치즈: {selected_menu.get_cheese()._MenuOption__item}\n'
               f' 🥗야채: {selected_menu.get_veggies()._MenuOption__item}\n'
-              f' 🧂소스: {selected_menu.get_sauce()._MenuOption__item}\n'
-              ' 를 카트에 담았습니다🛒.')
+              f' 🧂소스: {selected_menu.get_sauce()._MenuOption__item}\n')
 
     def print_cart(self, cart):
         print("\n🛒🛒🛒🛒🛒🛒🛒Cart🛒🛒🛒🛒🛒🛒🛒")
@@ -112,6 +123,7 @@ class UserMenu:
         while True:
             selected_menu = self.start_menu()
             self.print_selected_menu(selected_menu)
+            ' 를 카트에 담았습니다🛒.'
             cart = self.menu_service.add_to_cart(selected_menu)
 
             order_more_yn = input("> 추가 주문할 것이 있나요?(y/n) ")
@@ -122,3 +134,16 @@ class UserMenu:
                 # 추가주문 하려는 경우
                 pass
 
+    def my_menu_process(self, my_menu):
+        sandwich_key = my_menu[0]
+        bread_key = my_menu[1]
+        cheese_key = my_menu[2]
+        veggies_key = my_menu[3]
+        sauce_key = my_menu[4]
+
+        selected_menu = MenuEntity(self.menu_repo.sandwich_dict[sandwich_key],
+                                   self.menu_repo.bread_dict[bread_key],
+                                   self.menu_repo.cheese_dict[cheese_key],
+                                   self.menu_repo.veggies_dict[veggies_key],
+                                   self.menu_repo.sauce_dict[sauce_key])
+        return selected_menu
