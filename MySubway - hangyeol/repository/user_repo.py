@@ -3,18 +3,22 @@ from entity.user_entity import UserEntity
 import os
 
 class UserRepo:
-
+    path = os.path.join(os.path.dirname(__file__), 'user_info.pkl')
     def __init__(self):
+        # self.create_user_info_file()
         self.user_info = []
-        self.load_user_info()
+        self.load_user_info(self.path)
 
-    def load_user_info(self, filename = 'user_info.pkl'):
-        path = os.path.join(os.path.dirname(__file__), filename)
-        with open(path, 'rb') as f:
-            self.user_info = pickle.load(f)
+    def load_user_info(self, path):
+        if not os.path.exists(path):
+            self.user_info = self.create_user_info_file()
 
-            if len(self.user_info) > 0:
-                UserEntity.next_id = self.user_info[-1].get_user_id() + 1
+        else:
+            with open(self.path, 'rb') as f:
+                self.user_info = pickle.load(f)
+
+                if len(self.user_info) > 0:
+                    UserEntity.next_id = self.user_info[-1].get_user_id() + 1
 
     def add_user(self,user_info):
         self.user_info.append(user_info)
@@ -60,3 +64,23 @@ class UserRepo:
         return False
 
 
+    def create_user_info_file(self):
+        user_info = [
+            UserEntity(1, "haebin", "Haebin Kim", "female", 2000, []),
+            UserEntity(2, "soovin", "Soovin Choi", "male", 2000, []),
+            UserEntity(3, "eunbi", "Eunbi Jo", "female", 2000, []),
+            UserEntity(4, "hangyeol", "Hangyeol Kang", "male", 2000, []),
+            UserEntity(5, "youngjun", "Youngjun Yoo", "male", 2000, []),
+            UserEntity(6, "jinsu", "Jinsu Kim", "male", 2000, []),
+            UserEntity(7, "yejin", "Yejin Lee", "female", 2000, []),
+            UserEntity(8, "minha", "Minha Jeon", "female", 2000, []),
+            UserEntity(9, "chaeyeon", "Chaeyeon Heo", "female", 2000, []),
+            UserEntity(10, "jeongseok", "Jeongseok Sim", "male", 2000, []),
+            UserEntity(11, "hyeyoung", "Hyeyoung Kim", "female", 2000, [])
+        ]
+
+        # 피클 파일에 UserEntity 객체들을 저장
+        with open(self.path, "wb") as file:
+            pickle.dump(user_info, file)
+
+        return user_info
