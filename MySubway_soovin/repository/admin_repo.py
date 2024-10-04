@@ -1,4 +1,4 @@
-from entity.admin_entity import AdminEntity
+from MySubway_soovin.entity.admin_entity import AdminEntity
 
 #조회 추가 삭제
 class AdminRepo:
