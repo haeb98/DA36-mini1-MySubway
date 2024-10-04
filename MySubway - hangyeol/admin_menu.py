@@ -164,7 +164,7 @@ class AdminMenu:
             print(f'======== {page} 페이지 / {num_pages} 페이지 ==========')
             for user in current_page_user_info:
                 print(f'User ID : {user.get_user_id()}')
-                print(f'Login ID : {user.get_login_id()}')
+                print(f'Login ID : {user.get_login_id()}') #
                 print(f'Name : {user.get_user_name()}')
                 print(f'Gender : {user.get_user_gender()}')
                 print(f'Birth : {user.get_user_birth()}')
