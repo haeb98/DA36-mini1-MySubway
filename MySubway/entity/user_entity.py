@@ -10,7 +10,8 @@ class UserEntity:
         self.__my_menu = my_menu
         UserEntity.next_id += 1
 
-
+    def get_login_id(self):
+        return self.__user_login_id
     def get_user_id(self):
         return int(self.__user_id)
     def get_user_name(self):

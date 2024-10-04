@@ -1,4 +1,5 @@
 from MySubway.entity.menu_entity import MenuOption, MenuSelection
+from MySubway.repository.user_repo import UserRepo
 
 
 class MenuRepo:
@@ -52,7 +53,6 @@ class MenuRepo:
         10: MenuOption(10, 'veggies', '모두 빼기')
     }
 
-
     # sauce_list = ['랜치(Ranch)', '스위트 어니언(Sweet Onion)', '마요네즈(Mayonnaise)', '스위트 칠리(Sweet Chill)', '스모크 바비큐(Smoked BBQ)',
     #               '핫 칠리(Hot Chill)', '허니 머스타드(Honey Mustard)', '사우스웨스트 치폴레(Southwest Chipotle)', '홀스래디쉬(Horseradish)',
     #               '머스타드(Mustard)', '올리브 오일(Olive oil)', '레드와인 식초(Red wine vinegar)', '소금(salt)', '후추(pepper)', '소스 제외']
@@ -72,7 +72,14 @@ class MenuRepo:
 
     def __init__(self):
         self.cart = []
+        self.user_repo = UserRepo()
 
     def add_to_cart(self, selected_menu):
         self.cart.append(selected_menu)
         return self.cart
+
+    def my_menu(self,login_id):
+        user_id = self.user_repo.find_user_id_by_login_id(login_id)
+        info = self.user_repo.find_by_user_id(user_id)
+        my_menu_info = info.get_my_menu()
+        return my_menu_info
