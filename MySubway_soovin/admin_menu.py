@@ -1,5 +1,5 @@
 from MySubway_soovin.service.admin_service import AdminService
-
+#여러 디렉토리 내에 같은 이름이 있을 경우, 파일 디렉토리를 써주어서 명확하게 들여오자.
 
 
 class AdminMenu:
@@ -54,6 +54,7 @@ class AdminMenu:
 
     def admin_main(self):
         # 메인 메뉴
+        while True:
             choice = input(self.admin_main_str)
             if choice == '1':
                 self.admin_user_id()
@@ -67,7 +68,6 @@ class AdminMenu:
 
     # 유저 아이디 관리
     def admin_user_id(self):
-        while True:
             choice = input(self.admin_user_id_str)
             if choice == '1':
                 self.add_user_info()
@@ -78,7 +78,7 @@ class AdminMenu:
             elif choice == '4':
                 self.view_user_info()
             elif choice == '0':
-                break
+                return self.admin_main_str
             else:
                 print("잘못된 선택입니다.")
 

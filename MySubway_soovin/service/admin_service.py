@@ -1,12 +1,13 @@
-from MySubway_soovin.repository.admin_repo import AdminRepo
+#from MySubway_soovin.repository.admin_repo import AdminRepo
 from MySubway_soovin.repository.user_repo import UserRepo
 from MySubway_soovin.entity.user_entity import UserEntity
 
 class AdminService:
 
+#오더 르보에서 매출 데이터 가져오자
     #순수익 #총매출만 구현하자. 총매출을 날자별로 확인해서 적립할 수 있도록.
     def __init__(self) :
-        self.admin_repo = AdminRepo()
+        #self.admin_repo = AdminRepo()
         self.total_price = [1000,2000,3000,4000,5000]
         self.allsales = sum(self.total_price)
         self.user_repo = UserRepo()
