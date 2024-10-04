@@ -1,4 +1,4 @@
-from service.admin_service import AdminService
+from MySubway_soovin.service.admin_service import AdminService
 
 class AdminMenu:
     def __init__(self):
