@@ -1,6 +1,7 @@
 from repository.admin_repo import AdminRepo
 from repository.user_repo import UserRepo
 from entity.user_entity import UserEntity
+# from entity.order_entity import OrderNo
 
 class AdminService:
 
@@ -8,6 +9,7 @@ class AdminService:
         self.admin_repo = AdminRepo()
         self.sales_data = []
         self.user_repo = UserRepo()
+        # self.order_no = OrderNo()
 
     def add_user(self, user_id=None, login_id=None, user_name=None, user_gender=None, user_birth=None, my_menu=None):
 
@@ -34,3 +36,11 @@ class AdminService:
     def update_user_info(self, user_id, updated_info):
         return self.user_repo.update_user(user_id, updated_info)
 
+    ###################################################################
+    # 얘네는 오더가 피클파일에 저장이 돼야 만들 수가 있네..
+    # def view_orders(self):
+    #     pass
+    #
+    # def today_sales(self):
+    #     order_no = self.order_no.generate_order_no()
+    #     order_date = order_no[:8]

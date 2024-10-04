@@ -3,11 +3,9 @@ import os
 from entity.user_entity import UserEntity
 
 
-class CreateUserInfo:
 
-    def create_user_info_file(self):
 
-        user_info = [
+user_info = [
     UserEntity(1,"haebin", "Haebin Kim", "female", 2000, []),
     UserEntity(2,"soovin", "Soovin Choi", "male", 2000, []),
     UserEntity(3,"eunbi", "Eunbi Jo", "female", 2000, []),
@@ -22,5 +20,5 @@ class CreateUserInfo:
 ]
 
 # 피클 파일에 UserEntity 객체들을 저장
-        with open("user_info.pkl", "wb") as file:
-         pickle.dump(user_info, file)
+with open("user_info.pkl", "wb") as file:
+    pickle.dump(user_info, file)
