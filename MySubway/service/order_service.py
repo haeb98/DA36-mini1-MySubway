@@ -2,8 +2,10 @@
 # from cart import Cart  # 나중에 팀원이 작성할 cart 모듈을 import
 from MySubway.entity.order_entity import OrderEntity, OrderNo  # 절대 경로
 from MySubway.repository.order_repo import OrderRepo # 절대 경로
+# from MySubway.user_menu import UserMenu
 # from MySubway.repository.user_repo import user_repo
 # from MySubway.entity.user_entity import UserEntity
+
 
 class OrderService:
     """주문 및 결제 처리 서비스 클래스"""
@@ -28,15 +30,16 @@ class OrderService:
 
         # 주문번호 생성
         order_no = self.order_no_generator.generate_order_no()
+        self.order_no_up()
         print(f"주문번호 {order_no}")
         print('-----------------------')
 
-        order = OrderEntity(order_no, total_price, user)
-        self.add_order(order, cart=cart)
+        order = OrderEntity(order_no, total_price, user, cart)
+        self.add_order(order)
         self.select_payment_method()
         return 1
 
-    def add_order(self, order, cart):
+    def add_order(self, order):
         return self.order_repo.add_order(order)
 
     def select_payment_method(self):
@@ -52,5 +55,6 @@ class OrderService:
         # payment = Payment(amount) #생성자에 amount 전달
         # payment.select_payment_method()
 
+    def order_no_up(self):
         # 결제가 완료되면 주문번호 카운터 1 증가
-        # self.order_no_generator.increment_counter()
+        self.order_no_generator.increment_counter()
