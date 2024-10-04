@@ -23,3 +23,9 @@ class OrderMenu:
             print("주문이 취소되었습니다.")
             return  # 취소 시에도 메인 while 루프로 복귀(로그인창)
 
+###########################################
+
+    def view_order_info(self):
+        order_info = OrderService.view_order_info()
+
+
