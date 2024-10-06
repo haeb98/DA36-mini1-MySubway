@@ -42,11 +42,6 @@ class MenuEntity:
         return (f'sandwich= {self.__sandwich},bread ={self.__bread}'
                 f',cheese ={self.__cheese}, veggies ={self.__veggies}, sauce ={self.__sauce}')
 
-    # def get_selected_menu_name(self):
-    #     return (f'sandwich= {self.__sandwich},bread ={self.__bread}'
-    #             f',cheese ={self.__cheese}, veggies ={self.__veggies}, sauce ={self.__sauce}')
-
-# menu_entity = MenuEntity()
 
 class MenuSelection:
     def __init__(self, id, type, item, price):
