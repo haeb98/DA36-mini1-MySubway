@@ -6,7 +6,7 @@ class MenuService:
         self.menu_repo = MenuRepo()
 
     def my_menu(self, login_id):
-        print('마이메뉴로 주문')
+        print('=====Displaying MyMenu=====')
         return self.menu_repo.my_menu(login_id)
 
     def add_to_cart(self, selected_menu):
