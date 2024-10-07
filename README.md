@@ -1,12 +1,14 @@
 # MySubway
 
 <p align="center">
-디지털 리터러시 취약 계층의 사용 편의성 고려한 
-__서브웨이 커스텀 메뉴 저장 기능__을 제공하는 
-키오스크 시스템 __'MySubway' 프로젝트__
+  디지털 리터러시 취약 계층의 사용 편의성 고려한 <br>
+  **서브웨이 커스텀 메뉴 저장 기능**을 제공하는 <br>
+  키오스크 시스템 **'MySubway' 프로젝트**
 </p>
 
+<p align="center">
 ![image](https://github.com/user-attachments/assets/785787e1-559b-4ce3-a83d-1aa2d65b476c)
+</p>
 
 ## 구현 목표
 
