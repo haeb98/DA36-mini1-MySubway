@@ -6,6 +6,9 @@
   키오스크 시스템 'MySubway' 프로젝트
 </p>
 
+<p align="center">
+  <img src="[이미지_URL](https://github.com/user-attachments/assets/8e65afc7-583e-4faa-af36-ff116b1fb229)" alt="이미지 설명" width="400"/>
+</p>
 ![image](https://github.com/user-attachments/assets/8e65afc7-583e-4faa-af36-ff116b1fb229)
 
 ## 구현 목표
@@ -41,17 +44,15 @@
 
 
 # 유튜브 시연영상
-
+김해빈 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cuMewaIKWEY/0.jpg)](https://www.youtube.com/watch?v=cuMewaIKWEY)
 
 조은비 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Xr7FfoWEbC8?si=ElhrMrPTPJUCM9Tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Xr7FfoWEbC8/0.jpg)](https://www.youtube.com/watch?v=Xr7FfoWEbC8)
   
 강한결 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KnwUfM0VdEA?si=M9ExUp2u7w4PdHwV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/KnwUfM0VdEA&t/0.jpg)](https://www.youtube.com/watch?v=KnwUfM0VdEA&t)
 
-김해빈 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cuMewaIKWEY?si=Jl7sivmWIPggZA9R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+최수빈
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ykLneFlC5XQ/0.jpg)](https://www.youtube.com/watch?v=ykLneFlC5XQ)
 
-최수빈 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ykLneFlC5XQ?si=jTOLBisB8JdhZTE-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
