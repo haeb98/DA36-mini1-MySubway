@@ -6,9 +6,7 @@
   키오스크 시스템 'MySubway' 프로젝트
 </p>
 
-<p align="center">
-  <img src="[이미지 URL](https://github.com/user-attachments/assets/785787e1-559b-4ce3-a83d-1aa2d65b476c)" alt="MySubway main page" />
-</p>
+![image](https://github.com/user-attachments/assets/8e65afc7-583e-4faa-af36-ff116b1fb229)
 
 ## 구현 목표
 
@@ -43,6 +41,8 @@
 
 
 # 유튜브 시연영상
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cuMewaIKWEY/0.jpg)](https://www.youtube.com/watch?v=cuMewaIKWEY)
 
 조은비 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xr7FfoWEbC8?si=ElhrMrPTPJUCM9Tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
