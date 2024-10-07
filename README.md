@@ -2,12 +2,12 @@
 
 <p align="center">
   디지털 리터러시 취약 계층의 사용 편의성 고려한 <br>
-  **서브웨이 커스텀 메뉴 저장 기능**을 제공하는 <br>
-  키오스크 시스템 **'MySubway' 프로젝트**
+  서브웨이 커스텀 메뉴 저장 기능을 제공하는 <br>
+  키오스크 시스템 'MySubway' 프로젝트
 </p>
 
 <p align="center">
-![image](https://github.com/user-attachments/assets/785787e1-559b-4ce3-a83d-1aa2d65b476c)
+  <img src="[이미지 URL](https://github.com/user-attachments/assets/785787e1-559b-4ce3-a83d-1aa2d65b476c)" alt="MySubway main page" />
 </p>
 
 ## 구현 목표
@@ -25,9 +25,11 @@
 ![Userflow of MySubway](https://github.com/user-attachments/assets/ec7429c6-afaf-42f3-a258-285b02f02895)
 
 ## 팀소개
+
 - 팀명: 빈(김해빈,조수빈).센(강한결).조(조은비)
 
 ## 개발 환경 및 도구
+
 - 운영체제: Windows 10 
 - 버전 관리 시스템: Git, Github
 - 개발 도구 및 에디터: Pycharm, Sourcetree
@@ -41,6 +43,7 @@
 
 
 # 유튜브 시연영상
+
 조은비 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xr7FfoWEbC8?si=ElhrMrPTPJUCM9Tg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   
