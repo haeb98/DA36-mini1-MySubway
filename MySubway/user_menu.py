@@ -102,7 +102,6 @@ class UserMenu:
                                    self.menu_repo.sauce_dict[sauce_key])
         return selected_menu
 
-
     def print_selected_menu(self, selected_menu):
         print(f'🥪샌드위치: {selected_menu.get_sandwich()._MenuSelection__item}\n'
               f'🥖빵: {selected_menu.get_bread()._MenuOption__item}\n'
@@ -111,7 +110,7 @@ class UserMenu:
               f'🧂소스: {selected_menu.get_sauce()._MenuOption__item}')
 
     def print_cart(self, cart):
-        print("\n🛒🛒🛒🛒🛒🛒🛒Receipt🛒🛒🛒🛒🛒🛒🛒")
+        print("\n=============OrderSheet============")
         for index, item in enumerate(cart, start=1):
             print( f'{index}. 🥪{item.get_sandwich()._MenuSelection__item}'
                    f' 💲{item.get_sandwich()._MenuSelection__price}원\n'
@@ -142,6 +141,7 @@ class UserMenu:
             else:
                 # 추가주문 하려는 경우
                 pass
+
     def my_menu_process(self, my_menu):
         # print(f'My Menu: {my_menu}')
         # self.print_selected_menu(my_menu)

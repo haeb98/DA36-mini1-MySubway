@@ -22,11 +22,10 @@ class OrderService:
         print(f"🧾주문 번호: {order_no}")
         print("🛒🛒🛒🛒🛒🛒🛒🛒🛒🛒🛒🛒🛒🛒🛒🛒")
 
-        # TODO 주문 리스트에 담기
         order = OrderEntity(order_no, total_price, user, cart)
         self.select_payment_method()
         self.add_order(order) # repo.orders에 order를 추가하고, pkl 쓰기 작업
-        self.reset_cart(cart) #
+        self.reset_cart(cart) # order 완료된 cart는 비워짐
         return 1
 
     def add_order(self, order):
