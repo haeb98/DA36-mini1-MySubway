@@ -11,7 +11,7 @@ class AdminMenu:
         self.admin_main_str = """
 =====Admin Menu=====
 1. 유저 정보 관리
-2. 매출 전표 조회
+2. 매출 정보 관리
 
 0. 종료 하기
 ====================
@@ -31,7 +31,7 @@ class AdminMenu:
         self.admin_stats_str = """
     =====Sales state=====
     1. 일자별 총 매출 조회
-    2. 일자별 순 수익 조회
+    2. 월별 순 수익 조회
     3. 주문 내역 전체 조회
     
     0. 뒤로 가기
@@ -77,19 +77,19 @@ class AdminMenu:
             choice = input(self.admin_stats_str)
             if choice == '1':
                 choose_date = input("> 총 매출을 조회할 날짜를 입력하세요(yyyymmdd): ")
-                try:
+                try: # TODO Order-repo에 함수 생성하는 게 자연스러워 보임
                     total_sales = self.admin_service.total_sales(choose_date)
                     sales_of_date = sum(total_sales)
                     print(f'{choose_date[:4]}년 {choose_date[4:6]}월 {choose_date[6:]}일의 총 매출은 {sales_of_date}원 입니다.')
                 except ValueError as e:
                     print(e)
-            elif choice == '2':
+            elif choice == '2': # TODO Order-repo에 함수 생성하는 게 자연스러워 보임
                 choose_month = input("> 순수익을 계산할 년/월을 입력하세요(yyyymm): ")
                 try:
                     total_sales = self.admin_service.total_sales(choose_month)
                     sales_of_month = sum(total_sales)
                     pure_earn_of_month = sales_of_month * 0.104
-                    print(f'{choose_date[:4]}년 {choose_date[4:6]}월의 순수익은 {pure_earn_of_month}원 입니다.')
+                    print(f'{choose_month[:4]}년 {choose_month[4:6]}월의 순수익은 {pure_earn_of_month}원 입니다.')
                 except ValueError as e:
                     print(e)
 

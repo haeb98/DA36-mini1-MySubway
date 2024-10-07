@@ -16,7 +16,7 @@ class OrderRepo:
         except (FileNotFoundError, EOFError):
             self.orders = []
             self.save_orders()
-            print("Order 저장 새로 시작")
+            # print("Order 저장 새로 시작")
 
     def save_orders(self):
         with open(self.path, 'wb') as f:

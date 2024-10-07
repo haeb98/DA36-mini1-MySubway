@@ -64,7 +64,7 @@ class MenuRepo:
         4: MenuOption(4, 'sauce', '사우스웨스트 치폴레'),
         5: MenuOption(5, 'sauce', '홀스래디쉬'),
         6: MenuOption(6, 'sauce', '올리브 오일'),
-        7: MenuOption(7, 'sauce', '레드와인 식초)'),
+        7: MenuOption(7, 'sauce', '레드와인 식초'),
         8: MenuOption(8, 'sauce', '소금'),
         9: MenuOption(9, 'sauce', '후추'),
         10: MenuOption(10, 'sauce', '소스 제외')

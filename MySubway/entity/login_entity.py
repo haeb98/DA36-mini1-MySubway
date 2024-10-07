@@ -1,7 +1,7 @@
 
 
 class LoginEntity:
-    def __init__(self, login_id, password):
+    def __init__(self, login_id):
         self.__login_id = login_id
 
     def get_login_id(self):

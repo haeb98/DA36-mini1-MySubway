@@ -29,7 +29,7 @@ class AdminService:
     def find_by_user_id(self, user_id):
         return self.user_repo.find_by_user_id(user_id)
 
-
+    # TODO Order repo로 옮기는 게 자연스러워 보인
     def total_sales(self, input_date):
         orders = self.order_repo.get_all_orders()
         sales_of_date_list = []
